@@ -21,17 +21,41 @@
 // function newmobile(modelname,modelprice){
 //     document.write(modelname + ' ' + 'mobile price is ' + modelprice + '<br>' );
 // }
-function newmobile(modelname,modelprice){
-    return{
-      model: modelname,
-      price: modelprice
+
+document.write('<br>');
+// function newmobile(modelname,modelprice){
+//     return{
+//       model: modelname,
+//       price: modelprice
+//     }
+// }
+// var sumsung = newmobile('sumsung',5000);
+// var lg = newmobile('lg', 9000);
+// var opo = newmobile('oppo', 11000);
+
+// document.write(sumsung.model + ' ' + 'mobile price is ' + sumsung.price + '<br>' );
+// document.write(lg.model + ' ' + 'mobile price is ' + lg.price + '<br>');
+// document.write(opo.model + ' ' + 'mobile price is ' + opo.price );
+/* constructor */
+function latestmobile(modelname,pricename){
+    this.model = modelname;
+    this.price = pricename;
+    this.alldetail = function(){
+       document.write(this.model + ' price is ' + this.price);
+
     }
 }
-var sumsung = newmobile('sumsung',5000);
-var lg = newmobile('lg', 9000);
-var opo = newmobile('oppo', 11000);
+var sumsung = new latestmobile('sumsung gallaxy' , 15000);
+sumsung.alldetail();
 
-document.write(sumsung.model + ' ' + 'mobile price is ' + sumsung.price + '<br>' );
-document.write(lg.model + ' ' + 'mobile price is ' + lg.price + '<br>');
-document.write(opo.model + ' ' + 'mobile price is ' + opo.price );
-
+/* check property method*/
+if(typeof sumsung.price !== 'undefined'){
+    document.write('available');
+}else{
+    document.write('not aavailable');
+}
+if('prices' in sumsung){
+    document.write('ava');
+}else{
+    document.write('not ava');
+}
